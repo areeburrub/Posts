@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>POSTS</h1>
+        <select id="show-topic">
+            <option >All Posts</option>
+            <option >React Js</option>
+            <option>Firebase</option>
+            <option>Covid 19</option>
+        </select>
+        <button id="createBtn" hidden="true">Create</button>
+        <div id="loginBtn" class="google-btn" >
+            <div class="google-icon-wrapper">
+                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+            </div>
+            <p class="btn-text"><b>Sign in with google</b></p>
+        </div>
+    </nav>
+    <main>
+        <div id="user-card" hidden>
+            <img id="user-img" src="http://unsplash.it/100/100">
+            <div>
+                <h4 id="username">Lorem ipsum dolor</h4>
+                <button id="logoutBtn">Logout</button>
+            </div>
+
+        </div>
+
+        <div id="posts-container">
+        </div>
+    </main>
+    <div id="create-popup" hidden="true">
+        <h1> Create a Post</h1>
+        <form id="create-form">
+            <input type="text" id="input-title" placeholder="Enter Title">
+            <select id="input-topic">
+                <option value="" disabled selected>Select your option</option>
+                <option>React Js</option>
+                <option>Firebase</option>
+                <option>Covid 19</option>
+            </select>
+            <Textarea id="input-text" placeholder="Write your Post"></Textarea>
+            <button type="submit">Post Now</button>
+        </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+    <script>
+        // Your web app's Firebase configuration
+          var firebaseConfig = {
+                apiKey: "AIzaSyDIJbLtJafzuQqMBFaTorM3mr30CeG5vPE",
+                authDomain: "post-here-on.firebaseapp.com",
+                databaseURL: "https://post-here-on-default-rtdb.firebaseio.com",
+                projectId: "post-here-on",
+                storageBucket: "post-here-on.appspot.com",
+                messagingSenderId: "1000463859796",
+                appId: "1:1000463859796:web:aa8ad1b0d038f1fbf32dc1"
+            };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
